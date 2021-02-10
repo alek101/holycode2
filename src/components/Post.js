@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import postRequest from './postRequest';
 import { Hint } from 'react-autocomplete-hint';
-import useFetchData from './useFetchData';
+import fetchData from './fetchData';
 
 const Post = () => {
     const url='http://localhost:8000/authorList';
@@ -10,8 +10,7 @@ const Post = () => {
     let data={author: author};
 
     const getDataHint = async (url) => {
-        const rawResponse = await fetch(url);
-        const response = await rawResponse.json();
+        const response = await fetchData(url);
         let hintArray=response.map(a=>a.author);
         setHintData(hintArray);
     }
