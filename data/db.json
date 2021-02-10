@@ -1,0 +1,22 @@
+{
+  "authorList": [
+    {
+      "author": "mario",
+      "id": 1
+    },
+    {
+      "author": "daniel",
+      "id": 2
+    },
+    {
+      "author": "helena",
+      "id": 3
+    },
+    {
+      "data": {
+        "author": "somebody"
+      },
+      "id": 4
+    }
+  ]
+}
