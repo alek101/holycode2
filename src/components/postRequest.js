@@ -2,7 +2,7 @@ const postRequest = (url,data) => {
     const fetchOptions={
         method: 'POST',
         headers: {"Content-type":"application/json"},
-        body: JSON.stringify({data})
+        body: JSON.stringify(data)
     }
 
     fetchPost(url,fetchOptions);
