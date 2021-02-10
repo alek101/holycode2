@@ -1,18 +1,22 @@
 import {useSelector, useDispatch} from 'react-redux';
 import {addAuthors} from '../actions';
 
-
+import useFetchData from './useFetchData';
 
 
 const Home = () => {
     const url='http://localhost:8000/authorList';
     const dispatch = useDispatch();
 
-    const fetchData =  async (url) => {
-        const rawResponse = await fetch(url);
-        const response = await rawResponse.json();
-        dispatch(addAuthors(response))
-    }
+    // const fetchData =  async (url) => {
+    //     const rawResponse = await fetch(url);
+    //     const response = await rawResponse.json();
+    //     dispatch(addAuthors(response))
+    // }
+
+    
+    const fetchData = useFetchData(url)
+    .then(response => {dispatch(addAuthors(response))});
 
     const authorList = useSelector(state=>state.authors);
 
