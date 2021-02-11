@@ -4,3 +4,10 @@ export const addAuthors = (authors) =>{
             payload: authors
         } 
 }
+
+export const addPeople = (people) =>{
+    return{
+            type: "ADD_PEOPLE",
+            payload: people
+        } 
+}

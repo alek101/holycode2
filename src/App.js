@@ -4,6 +4,9 @@ import Home from './components/Home';
 import Post from './components/Post';
 import Navbar from './components/Navbar';
 
+import Test1 from './components/Test1';
+import Test2 from './components/Test2';
+
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import {createStore} from 'redux';
@@ -29,6 +32,12 @@ function App() {
               </Route>
               <Route exact path="/post">
                 <Post />
+              </Route>
+              <Route exact path="/test1">
+                <Test1 />
+              </Route>
+              <Route exact path="/test2">
+                <Test2 />
               </Route>
             </Switch>
           </div>
