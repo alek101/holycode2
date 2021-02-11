@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {addAuthors} from '../actions';
 
@@ -13,12 +14,15 @@ const Home = () => {
         dispatch(addAuthors(response))
     }
 
+    useEffect(()=>{
+        getData(url);
+    },[]);
+
     const authorList = useSelector(state=>state.authors);
 
     return ( 
         <div>
             <h1>Home</h1>
-            <button onClick={()=>{getData(url)}}>Call</button>
             <div>
                 {authorList && authorList.map(c=>(<p key={c.id}>{c.id} - {c.author}</p>))}
             </div>
